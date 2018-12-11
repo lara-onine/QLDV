@@ -230,9 +230,23 @@ namespace ADO.UC.DV
             LoadData();
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                sv = SinhVienBus.Instance.GetSinhVienDV(row.Cells[1].Value.ToString());
+                btnDoanPhi.Visible = true;
+            }
+            catch
+            {
+                sv = null;
+            }
+        }
+
         private void btnDoanPhi_Click(object sender, EventArgs e)
         {
-            if(sv != null)
+            if (sv != null)
             {
                 Doan_HoiPhiTemp temp = new Doan_HoiPhiTemp();
                 temp.ma_sv = sv.ma_sv;
@@ -245,20 +259,6 @@ namespace ADO.UC.DV
                 temp.tenLop = view.tenLop;
                 DongDoanPhi doanPhi = new DongDoanPhi(temp);
                 doanPhi.ShowDialog();
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                sv = SinhVienBus.Instance.GetSinhVienDV(row.Cells[1].Value.ToString());
-                btnDoanPhi.Visible = true;
-            }
-            catch
-            {
-                sv = null;
             }
         }
     }

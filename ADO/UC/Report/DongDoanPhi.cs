@@ -37,7 +37,6 @@ namespace ADO.UC.Report
                 new ReportParameter("soTien", temp.soTien.ToString()),
                 new ReportParameter("thang", DateTime.Now.Month.ToString()),
                 new ReportParameter("nam", DateTime.Now.Year.ToString()),
-                new ReportParameter("nguoi_lap", temp.nguoi_lap)
             };
             
             reportViewer1.LocalReport.SetParameters(list);

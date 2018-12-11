@@ -30,9 +30,9 @@ namespace ADO.UC.DV
             this.user = user;
             if(user.role_id != 1)
             {
-                btnSuaDV.Visible = false;
-                btnThemDV.Visible = false;
-                btnXoaDV.Visible = false;
+                btnEdit.Visible = false;
+                btnAdd.Visible = false;
+                btnDelete.Visible = false;
             }
         }
 
@@ -44,9 +44,9 @@ namespace ADO.UC.DV
             this.user = user;
             if (user.role_id != 1)
             {
-                btnSuaDV.Visible = false;
-                btnThemDV.Visible = false;
-                btnXoaDV.Visible = false;
+                btnEdit.Visible = false;
+                btnAdd.Visible = false;
+                btnDelete.Visible = false;
             }
         }
 
@@ -54,15 +54,6 @@ namespace ADO.UC.DV
         {
             dataGridView1.DataSource = SinhVienBus.Instance.GetSinhVienModels();
             dataGridView1.Refresh();
-        }
-
-        private void btnThemDV_Click(object sender, EventArgs e)
-        {
-            DoanVienDialog dv = new DoanVienDialog("Thêm mới sinh viên");
-            if(dv.ShowDialog() == DialogResult.OK)
-            {
-                LoadData();
-            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,9 +69,23 @@ namespace ADO.UC.DV
 
         }
 
-        private void btnSuaDV_Click(object sender, EventArgs e)
+        private void ConfirmDialog_deleteSuccess()
         {
-            if(sv != null)
+            LoadData();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DoanVienDialog dv = new DoanVienDialog("Thêm mới sinh viên");
+            if (dv.ShowDialog() == DialogResult.OK)
+            {
+                LoadData();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (sv != null)
             {
                 DoanVienDialog dv = new DoanVienDialog("Sửa thông tin sinh viên", sv, false);
                 if (dv.ShowDialog() == DialogResult.OK)
@@ -94,7 +99,7 @@ namespace ADO.UC.DV
             }
         }
 
-        private void btnXoaDV_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (sv != null)
             {
@@ -106,11 +111,6 @@ namespace ADO.UC.DV
             {
                 MessageBox.Show("Bạn phải chọn một sinh viên");
             }
-        }
-
-        private void ConfirmDialog_deleteSuccess()
-        {
-            LoadData();
         }
     }
 }

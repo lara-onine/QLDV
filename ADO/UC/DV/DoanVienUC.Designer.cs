@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoanVienUC));
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboKhoaHoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +45,8 @@
             this.rdoTatCa = new System.Windows.Forms.RadioButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.btnDoanPhi = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +56,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.btnDoanPhi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -242,7 +241,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -256,65 +255,12 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(980, 620);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ma_sv";
-            this.Column1.HeaderText = "Mã Sinh Viên";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ho_ten";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "dia_chi";
-            this.Column3.HeaderText = "Địa chỉ";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "sdt";
-            this.Column4.HeaderText = "Sdt";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "lop";
-            this.Column5.HeaderText = "Lớp";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "nganh";
-            this.Column6.HeaderText = "Ngành";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "khoa";
-            this.Column7.HeaderText = "Khoa";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "khoa_hoc";
-            this.Column8.HeaderText = "Khóa";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "da_dong_doan_phi";
-            this.Column9.HeaderText = "Đã đóng đoàn phí";
-            this.Column9.Name = "Column9";
             // 
             // topPanel
             // 
@@ -329,38 +275,80 @@
             // 
             // btnDoanPhi
             // 
-            this.btnDoanPhi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnDoanPhi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnDoanPhi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDoanPhi.BorderRadius = 0;
-            this.btnDoanPhi.ButtonText = "Xuất đơn";
-            this.btnDoanPhi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDoanPhi.DisabledColor = System.Drawing.Color.Gray;
-            this.btnDoanPhi.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnDoanPhi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDoanPhi.Iconimage")));
-            this.btnDoanPhi.Iconimage_right = null;
-            this.btnDoanPhi.Iconimage_right_Selected = null;
-            this.btnDoanPhi.Iconimage_Selected = null;
-            this.btnDoanPhi.IconMarginLeft = 0;
-            this.btnDoanPhi.IconMarginRight = 0;
-            this.btnDoanPhi.IconRightVisible = true;
-            this.btnDoanPhi.IconRightZoom = 0D;
-            this.btnDoanPhi.IconVisible = true;
-            this.btnDoanPhi.IconZoom = 90D;
-            this.btnDoanPhi.IsTab = false;
-            this.btnDoanPhi.Location = new System.Drawing.Point(722, 292);
+            this.btnDoanPhi.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnDoanPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoanPhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanPhi.ForeColor = System.Drawing.Color.White;
+            this.btnDoanPhi.Location = new System.Drawing.Point(828, 296);
             this.btnDoanPhi.Name = "btnDoanPhi";
-            this.btnDoanPhi.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnDoanPhi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnDoanPhi.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnDoanPhi.selected = false;
-            this.btnDoanPhi.Size = new System.Drawing.Size(241, 48);
-            this.btnDoanPhi.TabIndex = 1;
+            this.btnDoanPhi.Size = new System.Drawing.Size(134, 48);
+            this.btnDoanPhi.TabIndex = 4;
             this.btnDoanPhi.Text = "Xuất đơn";
-            this.btnDoanPhi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanPhi.Textcolor = System.Drawing.Color.White;
-            this.btnDoanPhi.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanPhi.UseVisualStyleBackColor = false;
             this.btnDoanPhi.Click += new System.EventHandler(this.btnDoanPhi_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ma_sv";
+            this.Column1.HeaderText = "Mã Sinh Viên";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ho_ten";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "dia_chi";
+            this.Column3.HeaderText = "Địa chỉ";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "sdt";
+            this.Column4.HeaderText = "Số điện thoại";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "lop";
+            this.Column5.HeaderText = "Lớp";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "nganh";
+            this.Column6.HeaderText = "Ngành";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "khoa";
+            this.Column7.HeaderText = "Khoa";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "khoa_hoc";
+            this.Column8.HeaderText = "Khóa";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "da_dong_doan_phi";
+            this.Column9.HeaderText = "Đã đóng đoàn phí";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // DoanVienUC
             // 
@@ -401,6 +389,7 @@
         private System.Windows.Forms.RadioButton rdoDaDong;
         private System.Windows.Forms.RadioButton rdoChuaDong;
         private System.Windows.Forms.RadioButton rdoTatCa;
+        private System.Windows.Forms.Button btnDoanPhi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -410,6 +399,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
-        private Bunifu.Framework.UI.BunifuFlatButton btnDoanPhi;
     }
 }

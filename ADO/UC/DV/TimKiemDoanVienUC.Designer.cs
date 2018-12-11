@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimKiemDoanVienUC));
             this.topPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.cboKhoa = new System.Windows.Forms.ComboBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnChuyen = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChuyenSH = new Bunifu.Framework.UI.BunifuFlatButton();
             this.topPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -70,7 +69,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnChuyenSH);
+            this.groupBox1.Controls.Add(this.btnChuyen);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.cboKhoaHoc);
             this.groupBox1.Controls.Add(this.label3);
@@ -199,7 +198,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -212,95 +211,82 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(980, 691);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // btnChuyen
+            // 
+            this.btnChuyen.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnChuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyen.ForeColor = System.Drawing.Color.White;
+            this.btnChuyen.Location = new System.Drawing.Point(758, 188);
+            this.btnChuyen.Name = "btnChuyen";
+            this.btnChuyen.Size = new System.Drawing.Size(185, 48);
+            this.btnChuyen.TabIndex = 5;
+            this.btnChuyen.Text = "Chuyển sinh hoạt đoàn";
+            this.btnChuyen.UseVisualStyleBackColor = false;
+            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ma_sv";
             this.Column1.HeaderText = "Mã Sinh Viên";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "ho_ten";
             this.Column2.HeaderText = "Họ tên";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "dia_chi";
             this.Column3.HeaderText = "Địa chỉ";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "sdt";
-            this.Column4.HeaderText = "Sdt";
+            this.Column4.HeaderText = "Số điện thoại";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "lop";
             this.Column5.HeaderText = "Lớp";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "nganh";
             this.Column6.HeaderText = "Ngành";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "khoa";
             this.Column7.HeaderText = "Khoa";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "khoa_hoc";
             this.Column8.HeaderText = "Khóa";
             this.Column8.Name = "Column8";
-            // 
-            // btnChuyenSH
-            // 
-            this.btnChuyenSH.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnChuyenSH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnChuyenSH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChuyenSH.BorderRadius = 0;
-            this.btnChuyenSH.ButtonText = "Chuyển sinh hoạt đoàn";
-            this.btnChuyenSH.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChuyenSH.DisabledColor = System.Drawing.Color.Gray;
-            this.btnChuyenSH.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnChuyenSH.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnChuyenSH.Iconimage")));
-            this.btnChuyenSH.Iconimage_right = null;
-            this.btnChuyenSH.Iconimage_right_Selected = null;
-            this.btnChuyenSH.Iconimage_Selected = null;
-            this.btnChuyenSH.IconMarginLeft = 0;
-            this.btnChuyenSH.IconMarginRight = 0;
-            this.btnChuyenSH.IconRightVisible = true;
-            this.btnChuyenSH.IconRightZoom = 0D;
-            this.btnChuyenSH.IconVisible = true;
-            this.btnChuyenSH.IconZoom = 90D;
-            this.btnChuyenSH.IsTab = false;
-            this.btnChuyenSH.Location = new System.Drawing.Point(683, 185);
-            this.btnChuyenSH.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnChuyenSH.Name = "btnChuyenSH";
-            this.btnChuyenSH.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnChuyenSH.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnChuyenSH.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnChuyenSH.selected = false;
-            this.btnChuyenSH.Size = new System.Drawing.Size(241, 48);
-            this.btnChuyenSH.TabIndex = 4;
-            this.btnChuyenSH.Text = "Chuyển sinh hoạt đoàn";
-            this.btnChuyenSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuyenSH.Textcolor = System.Drawing.Color.White;
-            this.btnChuyenSH.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenSH.Click += new System.EventHandler(this.btnChuyenSH_Click);
+            this.Column8.ReadOnly = true;
             // 
             // TimKiemDoanVienUC
             // 
@@ -335,6 +321,7 @@
         private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnChuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -343,6 +330,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private Bunifu.Framework.UI.BunifuFlatButton btnChuyenSH;
     }
 }

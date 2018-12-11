@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoiVienUC));
             this.topPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,7 +56,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnXuatDon = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnHoiPhi = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,7 +77,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnXuatDon);
+            this.groupBox1.Controls.Add(this.btnHoiPhi);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.cboKhoaHoc);
@@ -347,41 +346,19 @@
             this.panel1.Size = new System.Drawing.Size(980, 601);
             this.panel1.TabIndex = 0;
             // 
-            // btnXuatDon
+            // btnHoiPhi
             // 
-            this.btnXuatDon.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnXuatDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnXuatDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnXuatDon.BorderRadius = 0;
-            this.btnXuatDon.ButtonText = "Xuất đơn";
-            this.btnXuatDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXuatDon.DisabledColor = System.Drawing.Color.Gray;
-            this.btnXuatDon.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnXuatDon.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnXuatDon.Iconimage")));
-            this.btnXuatDon.Iconimage_right = null;
-            this.btnXuatDon.Iconimage_right_Selected = null;
-            this.btnXuatDon.Iconimage_Selected = null;
-            this.btnXuatDon.IconMarginLeft = 0;
-            this.btnXuatDon.IconMarginRight = 0;
-            this.btnXuatDon.IconRightVisible = true;
-            this.btnXuatDon.IconRightZoom = 0D;
-            this.btnXuatDon.IconVisible = true;
-            this.btnXuatDon.IconZoom = 90D;
-            this.btnXuatDon.IsTab = false;
-            this.btnXuatDon.Location = new System.Drawing.Point(781, 262);
-            this.btnXuatDon.Margin = new System.Windows.Forms.Padding(6);
-            this.btnXuatDon.Name = "btnXuatDon";
-            this.btnXuatDon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnXuatDon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnXuatDon.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnXuatDon.selected = false;
-            this.btnXuatDon.Size = new System.Drawing.Size(158, 48);
-            this.btnXuatDon.TabIndex = 5;
-            this.btnXuatDon.Text = "Xuất đơn";
-            this.btnXuatDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatDon.Textcolor = System.Drawing.Color.White;
-            this.btnXuatDon.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatDon.Click += new System.EventHandler(this.btnXuatDon_Click);
+            this.btnHoiPhi.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnHoiPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoiPhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoiPhi.ForeColor = System.Drawing.Color.White;
+            this.btnHoiPhi.Location = new System.Drawing.Point(809, 271);
+            this.btnHoiPhi.Name = "btnHoiPhi";
+            this.btnHoiPhi.Size = new System.Drawing.Size(134, 48);
+            this.btnHoiPhi.TabIndex = 6;
+            this.btnHoiPhi.Text = "Xuất đơn";
+            this.btnHoiPhi.UseVisualStyleBackColor = false;
+            this.btnHoiPhi.Click += new System.EventHandler(this.btnHoiPhi_Click);
             // 
             // HoiVienUC
             // 
@@ -423,7 +400,6 @@
         private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel mainPanel;
-        private Bunifu.Framework.UI.BunifuFlatButton btnXuatDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -434,5 +410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnHoiPhi;
     }
 }

@@ -39,11 +39,11 @@ namespace ADO.UC.DV
             this.isChuyen = isChuyen;
             if (isChuyen)
             {
-                btnChuyenSH.Visible = true;
+                btnChuyen.Visible = true;
             }
             else
             {
-                btnChuyenSH.Visible = false;
+                btnChuyen.Visible = false;
             }
 
             LoadCombobox();
@@ -209,19 +209,6 @@ namespace ADO.UC.DV
             }
         }
 
-        private void btnChuyenSH_Click(object sender, EventArgs e)
-        {
-            if(sv != null)
-            {
-                ChuyenSinhHoatDoan chuyen = new ChuyenSinhHoatDoan(sv);
-                chuyen.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Bạn phải chọn một sinh viên");
-            }
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -232,6 +219,19 @@ namespace ADO.UC.DV
             catch
             {
                 sv = null;
+            }
+        }
+
+        private void btnChuyen_Click(object sender, EventArgs e)
+        {
+            if (sv != null)
+            {
+                ChuyenSinhHoatDoan chuyen = new ChuyenSinhHoatDoan(sv);
+                chuyen.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn phải chọn một sinh viên");
             }
         }
     }
